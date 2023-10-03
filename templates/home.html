@@ -2,18 +2,20 @@
 <html>
 <head>
     <title>Welcome to Sales Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Sales Tracker</h1>
-        <p>This is your sales tracking application. You can manage products, record sales, and track your sessions.</p>
-        
-        <!-- Navigation links -->
-        <ul>
-            <li><a href="/products">Manage Products</a></li>
-            <li><a href="/sales">Record Sales</a></li>
-            <li><a href="/session">Session Management</a></li>
-        </ul>
+        {% include 'navbar.html' %}
+        <h1 class="center-text" id="animated-text">Welcome to Sales Tracker</h1>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                setTimeout(function(){
+                    $('#animated-text').text('This is your sales tracking application.');
+                }, 3000);
+            });
+        </script>
     </div>
 </body>
 </html>
