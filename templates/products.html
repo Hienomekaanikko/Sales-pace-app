@@ -6,20 +6,22 @@
 </head>
 <body>
     <div class="container">
-        <a href="/">Return to Home</a>
+        {% include 'navbar.html' %}
         <h1>Product Management</h1>
         
+        <!-- Form to add a new product -->
         <form method="POST">
-            {{ form.hidden_tag() }} 
+            {{ form.hidden_tag() }} <!-- Include this for CSRF protection -->
             <label for="name">Product Name:</label>
-            {{ form.name() }}
+            <input class="search-input" type="text" id="name" name="name">
             <label for="price">Price:</label>
-            {{ form.price() }}
-            {{ form.submit() }}
+            <input class="search-input" type="text" id="price" name="price">
+            <button class="search-button" type="submit">Search</button>
         </form>
 
         <hr>
 
+        <!-- List of existing products -->
         <h2>Products List</h2>
         <ul>
             {% for product in products %}
