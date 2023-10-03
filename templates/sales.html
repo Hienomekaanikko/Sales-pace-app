@@ -8,17 +8,19 @@
     <div class="container">
         {% include 'navbar.html' %}
         
+        <!-- Form to record a new sale -->
         <form method="POST">
             {{ form.hidden_tag() }}
             <label for="product_id">{{ form.product_id.label }}</label>
-            {{ form.product_id }}
+            <input class="search-input" type="text" id="product_id" name="product_id">
             <label for="quantity">{{ form.quantity.label }}</label>
-            {{ form.quantity }}
-            {{ form.submit(class="btn btn-primary") }}
+            <input class="search-input" type="text" id="quantity" name="quantity">
+            <button class="search-button" type="submit">Search</button>
         </form>
 
         <hr>
 
+        <!-- List of recent sales -->
         <h2>Recent Sales</h2>
         <table class="sales-table">
             <thead>
