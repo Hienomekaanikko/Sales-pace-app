@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Management</title>
+</head>
+<body>
+    <h1>Session Management</h1>
+    <a href="/">Return to Home</a>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="start_session">{{ form.start_session.label }}</label>
+        {{ form.start_session }}
+        <label for="quit_session">{{ form.quit_session.label }}</label>
+        {{ form.quit_session }}
+    </form>
+    {% if form.session_start.data %}
+    <p>Session started at: {{ form.session_start.data }}</p>
+    {% endif %}
+    {% if form.session_end.data %}
+    <p>Session ended at: {{ form.session_end.data }}</p>
+    {% endif %}
+    <p>Session Status: {{ form.session_status.data }}</p>
+</body>
+</html>

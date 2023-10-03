@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Tracking</title>
+</head>
+<body>
+    <div class="container">
+        <a href="/">Return to Home</a>
+        <h1>Sales Tracking</h1>
+        
+        <!-- Form to record a new sale -->
+        <form method="POST">
+            {{ form.hidden_tag() }} <!-- Include this for CSRF protection -->
+            <label for="product_id">Product:</label>
+            {{ form.product_id() }}
+            <label for="quantity">Quantity:</label>
+            {{ form.quantity() }}
+            {{ form.submit() }}
+        </form>
+
+        <hr>
+
+        <!-- List of recent sales -->
+        <h2>Recent Sales</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in sales %}
+            <tr>
+                <td>{{ sale.product.name }}</td>
+                <td>{{ sale.quantity }}</td>
+                <td>{{ sale.sale_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    </div>
+</body>
+</html>
