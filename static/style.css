@@ -17,21 +17,27 @@ body {
 
 /* Form styling */
 form {
-    margin-top: 20px;
+    margin-top: 30px;
+    background-color: transparent;
+    color:#3d6372;
+    font-size: 2em;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
 /* Buttons styling */
 button, .submit-button {
-    background-color: #007BFF;
+    background-color: #99b6d5;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 button:hover, .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #5ab300;
 }
 
 /* Flash messages styling */
@@ -77,18 +83,6 @@ footer {
     padding: 10px;
 }
 
-/* Return to Home link styling */
-.return-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.return-link:hover {
-    text-decoration: underline;
-}
 
 p {
     position: relative;
@@ -142,11 +136,9 @@ p {
 .sales-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 .sales-table th, .sales-table td {
-    padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
 }
@@ -163,4 +155,31 @@ p {
     margin: 0;
     font-size: 50px;
     color: #453e3e;
+}
+
+/* Styling for the search input fields */
+.search-input {
+    width: 10%;
+    padding: 10px;
+    border: 2px solid #3498db; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    outline: none; /* Remove input focus outline */
+    /* Add any other styles you want for the input fields */
+}
+
+/* Styling for the search button */
+.search-button {
+    background-color: #7a8f54; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    /* Add any other styles you want for the search button */
+}
+
+/* Hover effect for the search button */
+.search-button:hover {
+    background-color: #2980b9; /* Hover background color */
 }
