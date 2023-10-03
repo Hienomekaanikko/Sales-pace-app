@@ -1,46 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans&family=Quicksand:wght@300&family=Rubik:wght@300&display=swap');
+
 /* Reset some default styles for better consistency */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Header styling */
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Navigation menu styling */
-nav {
-    background-color: #333;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #a9cff7;
 }
 
 /* Page content styling */
 .container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px; /* Increase padding for better spacing */
 }
 
 /* Form styling */
@@ -88,6 +60,7 @@ th, td {
 
 th {
     background-color: #f2f2f2;
+    font-weight: bold;
 }
 
 /* Session status styling */
@@ -115,4 +88,79 @@ footer {
 
 .return-link:hover {
     text-decoration: underline;
+}
+
+p {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Style for the navigation bar */
+.nav {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Center the navigation items horizontally */
+}
+
+.nav li {
+    display: inline; /* Display list items inline to keep them horizontally aligned */
+    margin-right: 20px; /* Spacing between navigation items */
+}
+
+.nav a {
+    text-decoration: none;
+    color: #3c0d0d; /* Text color for the navigation items */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #ff9900; /* Text color when hovering over a navigation item */
+}
+
+/* Define a CSS animation for fading in the text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the animated-text element */
+#animated-text {
+    animation: fadeIn 2s; /* Animation duration and timing */
+}
+
+/* Styles for the recent sales table */
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.sales-table th, .sales-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.sales-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Center text horizontally and vertically on the page */
+.center-text {
+    text-align: center;
+    line-height: 100vh;
+    margin: 0;
+    font-size: 50px;
+    color: #453e3e;
 }
