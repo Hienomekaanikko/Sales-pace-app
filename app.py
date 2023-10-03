@@ -29,8 +29,8 @@ class ProductForm(FlaskForm):
     submit = SubmitField('Add Product')
 
 class SaleForm(FlaskForm):
-    product_id = IntegerField('Product ID', validators=[DataRequired()])
-    quantity = IntegerField('Quantity', validators=[DataRequired()])
+    product_id = IntegerField('Product ID:', validators=[DataRequired()])
+    quantity = IntegerField('Quantity:', validators=[DataRequired()])
     submit = SubmitField('Record Sale')
 
 @app.route('/')
@@ -40,7 +40,8 @@ def home():
 @app.route('/remove_product/<int:product_id>', methods=['POST'])
 def remove_product(product_id):
     product = Product.query.get_or_404(product_id)
-    
+
+    # Remove the associated sales records
     sales = Sale.query.filter_by(product_id=product_id).all()
     for sale in sales:
         db.session.delete(sale)
@@ -74,6 +75,7 @@ def sales():
         product_id = form.product_id.data
         quantity = form.quantity.data
 
+        # Check if the specified product_id exists
         product = Product.query.get(product_id)
         if product:
             sale = Sale(product_id=product_id, quantity=quantity)
