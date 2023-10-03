@@ -9,9 +9,8 @@
         <a href="/">Return to Home</a>
         <h1>Product Management</h1>
         
-        <!-- Form to add a new product -->
         <form method="POST">
-            {{ form.hidden_tag() }} <!-- Include this for CSRF protection -->
+            {{ form.hidden_tag() }} 
             <label for="name">Product Name:</label>
             {{ form.name() }}
             <label for="price">Price:</label>
@@ -21,7 +20,6 @@
 
         <hr>
 
-        <!-- List of existing products -->
         <h2>Products List</h2>
         <ul>
             {% for product in products %}
